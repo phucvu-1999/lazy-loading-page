@@ -30,3 +30,56 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
+// Selecting element;
+const header = document.querySelector('.header');
+console.log('header: ', header);
+
+const allSections = document.querySelectorAll('.section');
+console.log('All sections: ', allSections);
+
+const allButtons = document.getElementsByTagName('button');
+console.log('All btns: ', allButtons);
+
+console.log(
+  'all elements that have btn className: ',
+  document.getElementsByClassName('btn')
+);
+
+// Creating and selecting elements;
+const message = document.createElement('div');
+message.classList.add('cookie-message');
+message.innerHTML =
+  'We use cookie to improve funtionality. <button class="btn btn--close-cookie">Got it!</button>';
+
+// header.prepend(message);
+header.append(message);
+
+// header.append(message.cloneNode(true));
+// DELETE Element;
+
+const btnCookies = document.querySelector('.btn--close-cookie');
+
+btnCookies.addEventListener('click', function () {
+  header.removeChild(message);
+});
+
+// Styles
+message.style.backgroundColor = '#37383d';
+message.style.width = '120%';
+
+document.documentElement.style.setProperty('--color-primary', 'orangered');
+
+// Atributtes;
+// Standard attributes:
+const logo = document.querySelector('.nav__logo');
+console.log('logo src: ', logo.src);
+console.log('logo alt: ', logo.alt);
+
+// Custom attributes:
+console.log('Custom attribute: ', logo.designer);
+console.log(
+  'This way can take the custome attribute: ',
+  logo.getAttribute('designer')
+);
+logo.setAttribute('company', 'Bankist');
