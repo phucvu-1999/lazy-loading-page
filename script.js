@@ -74,7 +74,6 @@ document.documentElement.style.setProperty('--color-primary', 'orangered');
 // Standard attributes:
 const logo = document.querySelector('.nav__logo');
 console.log('logo src: ', logo.src);
-console.log('logo alt: ', logo.alt);
 
 // Custom attributes:
 console.log('Custom attribute: ', logo.designer);
